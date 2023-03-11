@@ -114,3 +114,9 @@ a {
     max-height: 600px;
   }
 }
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+}
