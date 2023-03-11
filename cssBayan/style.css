@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: .3s ease;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  font-size: 3vw;
+}
+
+header,
+.bottom-block,
+.top-block {
+  padding: 1.1rem;
+}
+
+.wrapper {
+  padding: 0 1rem;
+  margin: 0 auto;
+  cursor: pointer;
+  max-width: 1000px;
+}
+
+ul {
+  list-style: none;
+}
+
+.image {
+  max-height: 0;
+  width: 50%;
+}
+
+.top-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 0;
+  border-bottom: 0.2vh solid dimgray;
+  color: black;
+}
+
+li {
+  position: relative;
+}
+
+.fa-solid {
+  opacity: 0;
+}
+
+.radio {
+  cursor: pointer;
+  content: '';
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.radio:checked~.top-block .fa-solid {
+  transform: rotate(45deg);
+}
+
+.radio:checked~.bottom-block,
+.radio:checked~.bottom-block .image {
+  max-height: 600px;
+}
+
+.radio:checked~.top-block {
+  color: red;
+}
+
+
+@media (min-width: 820px) {
+
+  header,
+  .bottom-block,
+  .top-block {
+    padding: 2rem;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .wrapper:hover .fa-solid {
+    opacity: 1;
+  }
+
+  .item:hover .top-block .fa-solid {
+    transform: rotate(45deg);
+  }
+
+  .item:hover .top-block {
+    color: red;
+  }
+
+  .item:hover .bottom-block,
+  .item:hover .bottom-block .image {
+    max-height: 600px;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+}
